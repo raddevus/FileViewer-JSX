@@ -1,0 +1,1 @@
+cd UserInter* && npm run build && xcopy /E/Y build\*.* ..\wwwroot\  &&  cd .. && dotnet run
