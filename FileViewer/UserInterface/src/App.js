@@ -17,11 +17,43 @@ function App() {
 
         window.external.receiveMessage((message) => console.log("Emulating receiveMessage.\nMessage received: " + message));
     } else {
-        window.external.receiveMessage((message) => alert(message));
+        // Registers the receive loop for the program
+        window.external.receiveMessage(response => {
+            alert(response);
+            response = JSON.parse(response);
+            
+            //alert(response.command);
+            switch (response.command){
+/*                case "getInitialPath":{
+                    document.querySelector("#clearTextFilePath").value = response.data;
+                    //alert(`${response.fsi[0].Name} | ${response.fsi[0].Type} | ${response.fsi[0].FullName}`);
+                    DisplayFileSystemTable(response.fsi, "#fileSystemItems");
+                    break;
+                }
+                case "getPathData":{
+                    //alert(`response.data : ${response.data}`);
+                    if (response.fsi.length == 0){
+                    alert("Can't get path.");
+                    return;
+                    }
+                    document.querySelector("#clearTextFilePath").value = response.data;
+                    //alert(`${response.fsi[0].Name} | ${response.fsi[0].Type} | ${response.fsi[0].FullName}`);
+                    DisplayFileSystemTable(response.fsi, "#fileSystemItems");
+                    break;
+                } */
+                default:{
+                    alert(response.data);
+                    break;
+                }
+            }
+        });
     }
 
     function callDotNet() {
-        window.external.sendMessage('Hi .NET! 🤖');
+        // Command & Data have to begin with uppercase letter 
+        // to get serialized properly on the receiving side.
+        window.external.sendMessage(`{"Command":"testMsg","Data":"Hi .NET! 🤖"}`);
+        //window.external.sendMessage('Hi .NET! 🤖');
     }
     
     return (
