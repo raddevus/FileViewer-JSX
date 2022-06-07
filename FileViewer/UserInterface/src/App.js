@@ -1,5 +1,6 @@
 import photinoLogo from './photino-logo.svg';
 import './App.css';
+import {DisplayFileSystemTable, initPath} from "./files";
 
 function App() {
     // Make sure that sendMessage and receiveMessage exist
@@ -19,12 +20,11 @@ function App() {
     } else {
         // Registers the receive loop for the program
         window.external.receiveMessage(response => {
-            alert(response);
             response = JSON.parse(response);
             
             //alert(response.command);
             switch (response.command){
-/*                case "getInitialPath":{
+                case "getInitialPath":{
                     document.querySelector("#clearTextFilePath").value = response.data;
                     //alert(`${response.fsi[0].Name} | ${response.fsi[0].Type} | ${response.fsi[0].FullName}`);
                     DisplayFileSystemTable(response.fsi, "#fileSystemItems");
@@ -40,13 +40,14 @@ function App() {
                     //alert(`${response.fsi[0].Name} | ${response.fsi[0].Type} | ${response.fsi[0].FullName}`);
                     DisplayFileSystemTable(response.fsi, "#fileSystemItems");
                     break;
-                } */
+                } 
                 default:{
                     alert(response.data);
                     break;
                 }
             }
         });
+        let currentDir = window.external.sendMessage(initPath);
     }
 
     function callDotNet() {
@@ -58,8 +59,23 @@ function App() {
     
     return (
         <div className="App">
-            <h2>First Full Build Test</h2>
-            <img src={photinoLogo} alt="Photino" className="logo center" />
+            <h2>Files</h2>
+            <div class="input-group mb-3">
+                <input id="clearTextFilePath" type="text" class="form-control" placeholder="Clear-text file" aria-label="clear-text-file" aria-describedby="clearTextFileButton" />
+                <button class="btn btn-outline-secondary" type="button" id="clearTextFileButton">Button</button>
+            </div>
+                <table id="fileSystem" class="table  table-striped table-hover">
+                <thead class="table-success">
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>FullName</th>
+                    </tr>
+                </thead>
+                <tbody id="fileSystemItems">
+                </tbody>
+            </table>
 
             <h1 className="text-center">Hello to Photino.React</h1>
         
