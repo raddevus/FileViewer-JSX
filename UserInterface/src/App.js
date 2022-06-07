@@ -26,6 +26,7 @@ function App() {
     
     return (
         <div className="App">
+            <h2>First Full Build Test</h2>
             <img src={photinoLogo} alt="Photino" className="logo center" />
 
             <h1 className="text-center">Hello to Photino.React</h1>

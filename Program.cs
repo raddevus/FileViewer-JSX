@@ -1,5 +1,6 @@
 ﻿using PhotinoNET;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Text;
 
@@ -20,10 +21,13 @@ namespace HelloPhotinoReact
                 // Resize to a percentage of the main monitor work area
                 //.Resize(50, 50, "%")
                 // Center window in the middle of the screen
+                .SetUseOsDefaultSize(false)
+                .SetSize(new Size(800,600))
                 .Center()
+                
                 // Users can resize windows by default.
                 // Let's make this one fixed instead.
-                .SetResizable(false)
+                .SetResizable(true)
                 .RegisterCustomSchemeHandler("app", (object sender, string scheme, string url, out string contentType) =>
                 {
                     contentType = "text/javascript";
