@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileViewerJSX.React", "FileViewer\FileViewerJSX.React.csproj", "{3AADE4C9-DA0C-4E1A-B578-1AE7D05C93A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileViewer.Tests", "FileViewer.Tests\FileViewer.Tests.csproj", "{599A76AC-3E1E-414F-A99B-AD60B447621A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AADE4C9-DA0C-4E1A-B578-1AE7D05C93A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AADE4C9-DA0C-4E1A-B578-1AE7D05C93A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AADE4C9-DA0C-4E1A-B578-1AE7D05C93A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AADE4C9-DA0C-4E1A-B578-1AE7D05C93A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{599A76AC-3E1E-414F-A99B-AD60B447621A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{599A76AC-3E1E-414F-A99B-AD60B447621A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{599A76AC-3E1E-414F-A99B-AD60B447621A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{599A76AC-3E1E-414F-A99B-AD60B447621A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
