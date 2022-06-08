@@ -77,12 +77,6 @@ function App() {
                 </tbody>
             </table>
 
-            <h1 className="text-center">Hello to Photino.React</h1>
-        
-            <p className="text-center">
-                This is a React App served from a local web root. Click on the button below to send a message to the backend. It will respond and send a message back to the UI.
-            </p>
-
             <button className="primary center" onClick={callDotNet}>Call .NET</button>
         </div>
     );
