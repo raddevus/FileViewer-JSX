@@ -37,14 +37,8 @@ function initFiles(){
           }
       }
     });
-
-    ReactDOM.createRoot(document.querySelector('#files'))
-        .render(
-        React.createElement('h3', null, 'File System'),
-        
-      );
       
-      let currentDir = window.external.sendMessage(initPath);
+    let currentDir = window.external.sendMessage(initPath);
 }
 
 let folderIcon = [{xmlns:"http://www.w3.org/2000/svg", width:"16", height:"16", fill:"currentColor", class:"bi bi-folder2", viewBox:"0 0 16 16"},
