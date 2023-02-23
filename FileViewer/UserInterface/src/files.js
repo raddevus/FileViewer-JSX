@@ -123,9 +123,9 @@ export function DisplayFileSystemTable(fsi, rootElement){
 
     FST
       .render(
-        React.createElement(FSTable, {fsi:fsi}),
-        
+        <FSTable fsi={fsi} />
     );
+
   }
   else{
     FST.render(new FSTable({fsi:fsi}).FileSystemTable(fsi));
