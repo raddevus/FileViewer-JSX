@@ -75,8 +75,10 @@ class FSTable extends React.Component{
      let allItems = [];
   
     for (let x=0; x < fileSystemInfo.length;x++){
-        allItems.push( React.createElement("tr",{
-            key:x,onClick:() => {
+        allItems.push(
+            <tr
+            key={x}
+            onClick = {() => {
               // alert(this.fileSystemInfo[x].Name);
 
               if (this.fileSystemInfo[x].Type == 'd'){
@@ -94,17 +96,18 @@ class FSTable extends React.Component{
                 getFileData.Data = this.fileSystemInfo[x].FullName;
                 window.external.sendMessage(JSON.stringify(getFileData));
               }
-            }
-          },
+            }}
+          >
             <td width="150px">
               <svg {...isDirectory(fileSystemInfo[x].Type) ? folderIcon[0]: fileIcon[0]}>
                 <path {...isDirectory(fileSystemInfo[x].Type) ? folderIcon[1]: fileIcon[1]} />
               </svg>
-            </td>,
-            <td>{fileSystemInfo[x].Name}</td>,
-            <td>{fileSystemInfo[x].Type}</td>,
+            </td>
+            <td>{fileSystemInfo[x].Name}</td>
+            <td>{fileSystemInfo[x].Type}</td>
             <td>{fileSystemInfo[x].FullName}</td>
-        ))
+          </tr>
+        );
     }
     return allItems;
   }
