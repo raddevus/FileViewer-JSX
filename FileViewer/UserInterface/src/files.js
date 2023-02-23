@@ -102,15 +102,15 @@ class FSTable extends React.Component{
               }
             }
           },
-            React.createElement("td",{width:"150px"}, 
-            React.createElement("svg", isDirectory(fileSystemInfo[x].Type) ? folderIcon[0]: fileIcon[0],
-              React.createElement("path", isDirectory(fileSystemInfo[x].Type) ? folderIcon[1]: fileIcon[1] ,null)
-            ), ),
-            React.createElement("td",null,fileSystemInfo[x].Name),
-            React.createElement("td",null, fileSystemInfo[x].Type),
-            React.createElement("td",null, fileSystemInfo[x].FullName)
-            )
-         ) ;
+            <td width="150px">
+              <svg {...isDirectory(fileSystemInfo[x].Type) ? folderIcon[0]: fileIcon[0]}>
+                <path {...isDirectory(fileSystemInfo[x].Type) ? folderIcon[1]: fileIcon[1]} />
+              </svg>
+            </td>,
+            <td>{fileSystemInfo[x].Name}</td>,
+            <td>{fileSystemInfo[x].Type}</td>,
+            <td>{fileSystemInfo[x].FullName}</td>
+        ))
     }
     return allItems;
   }
@@ -124,6 +124,7 @@ export function DisplayFileSystemTable(fsi, rootElement){
     FST
       .render(
         React.createElement(FSTable, {fsi:fsi}),
+        
     );
   }
   else{
