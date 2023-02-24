@@ -103,9 +103,9 @@ class FSTable extends React.Component{
                 <path {...isDirectory(fileSystemInfo[x].Type) ? folderIcon[1]: fileIcon[1]} />
               </svg>
             </td>
-            <td>{fileSystemInfo[x].Name}</td>
+            <td className="filename">{fileSystemInfo[x].Name}</td>
             <td>{fileSystemInfo[x].Type}</td>
-            <td>{fileSystemInfo[x].FullName}</td>
+            <td className="filename">{fileSystemInfo[x].FullName}</td>
           </tr>
         );
     }

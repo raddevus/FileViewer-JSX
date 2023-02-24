@@ -68,24 +68,47 @@ function App() {
     
     return (
         <div className="App">
-            <h2>Files</h2>
-            <div class="input-group mb-3">
-                <input id="clearTextFilePath" type="text" class="form-control" placeholder="Clear-text file" aria-label="clear-text-file" aria-describedby="clearTextFileButton" />
-                <button onClick={goToDirectory} class="btn btn-outline-secondary" type="button" id="clearTextFileButton">Go</button>
-            </div>
-                <table id="fileSystem" class="table  table-striped table-hover">
-                <thead class="table-success">
-                    <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>FullName</th>
-                    </tr>
-                </thead>
-                <tbody id="fileSystemItems">
-                </tbody>
-            </table>
 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Select File
+</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Files</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+            <input id="clearTextFilePath" type="text" class="form-control" placeholder="Clear-text file" aria-label="clear-text-file" aria-describedby="clearTextFileButton" />
+            <button onClick={goToDirectory} class="btn btn-outline-secondary" type="button" id="clearTextFileButton">Go</button>
+        </div>
+        <div class="table-responsive-sm">
+            <table id="fileSystem" class="table table-sm  table-striped table-hover">
+            <thead class="table-success">
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>FullName</th>
+                </tr>
+            </thead>
+            <tbody id="fileSystemItems">
+            </tbody>
+            </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+            
             <button className="primary center" onClick={callDotNet}>Call .NET</button>
         </div>
     );
